@@ -31,8 +31,21 @@ export default {
   font-size: 19px;
   font-weight: 600;
 
+  @media screen and (max-width: 550px) {
+    display: grid;
+    grid-template-columns: repeat(2, min-content);
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+
   img {
     height: 52px;
+
+    @media screen and (max-width: 550px) {
+      grid-column: 1/3;
+    }
   }
 
   > div {
@@ -41,6 +54,10 @@ export default {
 
     &:nth-child(2) {
       width: 100%;
+
+      @media screen and (max-width: 550px) {
+        width: min-content;
+      }
     }
 
     span {

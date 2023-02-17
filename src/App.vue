@@ -132,7 +132,7 @@ onMounted(() => {
               <span>24h change</span>
               <span class="change">+1,56</span>
             </div>
-            <img src="/img/worm1.svg" alt="">
+            <img class="worm" src="/img/worm1.svg" alt="">
             <button>Trade</button>
           </li>
           <li class="transaction-recent">
@@ -149,7 +149,7 @@ onMounted(() => {
               <span>24h change</span>
               <span class="change negative">-1,41</span>
             </div>
-            <img src="/img/worm2.svg" alt="">
+            <img class="worm" src="/img/worm2.svg" alt="">
             <button>Trade</button>
           </li>
         </ul>
@@ -206,12 +206,18 @@ main {
 
   @media screen and (max-width: 900px) {
     display: grid;
-    grid-template-columns: min-content, repeat(2, 1fr);
+    grid-template-columns: min-content repeat(2, 1fr);
     gap: 1rem;
   }
 
   > span {
     font-size: 35px;
+
+    @media screen and (max-width: 500px) {
+      grid-row: 2;
+      grid-column: 1/4;
+      white-space: nowrap;
+    }
   }
 
   > button {
@@ -241,6 +247,10 @@ main {
       width: 100%;
     }
 
+    @media screen and (max-width: 500px) {
+      grid-row: 3;
+    }
+
     input {
       border: none;
       outline: none;
@@ -257,6 +267,10 @@ main {
 
     @media screen and (max-width: 900px) {
       justify-content: end;
+    }
+
+    @media screen and (max-width: 500px) {
+      grid-column: 3;
     }
   }
 }
@@ -320,6 +334,15 @@ main {
     justify-content: space-between;
   }
 
+  @media screen and (max-width: 650px) {
+    padding: 2px;
+    gap: 0px;
+  }
+
+  @media screen and (max-width: 500px) {
+    overflow-x: scroll;
+  }
+
   button {
     background: transparent;
     border: none;
@@ -350,6 +373,8 @@ main {
   grid-template-rows: min-content 1fr min-content;
   padding: 2rem;
 
+  overflow-x: scroll;
+
   .controls {
     grid-area: controls;
     display: flex;
@@ -372,6 +397,10 @@ main {
       display: flex;
       align-items: center;
       gap: 1rem;
+
+      @media screen and (max-width: 500px) {
+        grid-row: 3;
+      }
 
       div {
         display: flex;
@@ -401,6 +430,10 @@ main {
     justify-content: space-evenly;
     opacity: 0.7;
     grid-area: dollars;
+
+    @media screen and (max-width: 900px) {
+      font-size: 1rem;
+    }
   }
 
   .date {
@@ -408,6 +441,7 @@ main {
     font-weight: 600;
     display: flex;
     justify-content: space-evenly;
+    gap: 1rem;
     opacity: 0.7;
     grid-area: date;
   }
@@ -430,6 +464,11 @@ main {
   justify-content: space-between;
   padding: 1rem 2rem;
 
+  @media screen and (max-width: 550px) {
+    flex-direction: column;
+    padding: 1rem 0;
+  }
+
   a {
     color: #ffffff;
     opacity: 0.7;
@@ -449,9 +488,24 @@ main {
   margin: 1rem 2rem;
   box-shadow: inset 0 0 5px 5px rgba(0, 0, 0, 1);
 
+  @media screen and (max-width: 900px) {
+    display: grid;
+    grid-template-columns: repeat(4, min-content);
+    row-gap: 1rem;
+    margin: 1rem 0;
+
+    > .worm {
+      grid-column: 1/4;
+    }
+  }
+
   > div {
     display: flex;
     flex-direction: column;
+
+    > span {
+      white-space: nowrap;
+    }
 
     .currency {
       opacity: 0.7;
@@ -484,6 +538,10 @@ main {
     height: min-content;
     padding: 6px 13px;
     border-radius: 1000px;
+
+    @media screen and (max-width: 900px) {
+      grid-column: 4;
+    }
   }
 }
 

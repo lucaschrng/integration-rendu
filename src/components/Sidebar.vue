@@ -93,6 +93,12 @@ export default {
   @media screen and (max-width: 1700px) {
     max-height: min-content;
     height: min-content;
+    min-width: 100%;
+  }
+
+  @media screen and (max-width: 900px) {
+    flex-direction: column;
+    padding: 1rem 0;
   }
 
   > div > h2 {
