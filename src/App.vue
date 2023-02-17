@@ -7,11 +7,9 @@ let showNav = ref(true);
 const toggleNav = () => showNav.value = !showNav.value;
 
 onMounted(() => {
-  if (window.innerWidth <= 1200) showNav.value = false
-  else showNav.value = true
+  showNav.value = window.innerWidth > 1200;
   window.addEventListener('resize', () => {
-    if (window.innerWidth <= 1200) showNav.value = false
-    else showNav.value = true
+    showNav.value = window.innerWidth > 1200;
   })
 })
 </script>
