@@ -90,6 +90,11 @@ export default {
     display: none;
   }
 
+  @media screen and (max-width: 1700px) {
+    max-height: min-content;
+    height: min-content;
+  }
+
   > div > h2 {
     font-size: 22px;
     padding: 1rem 0;
@@ -99,6 +104,10 @@ export default {
     display: flex;
     justify-content: space-between;
     margin-bottom: 5rem;
+
+    @media screen and (max-width: 1700px) {
+      display: none;
+    }
   }
 
   .assets {

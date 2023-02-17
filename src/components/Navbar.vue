@@ -1,5 +1,10 @@
+<script setup>
+const { toggleNav } = defineProps(['toggleNav'])
+</script>
+
 <template>
   <nav>
+    <button @click="toggleNav"><ion-icon name="close-outline"></ion-icon></button>
     <a href="/" class="home-button">
       <img src="/img/logo.svg" alt="logo">
       <h1>inance</h1>
@@ -69,6 +74,28 @@ nav {
   align-items: center;
   justify-content: space-between;
   padding: 3rem 4rem;
+  
+  @media screen and (max-width: 1200px) {
+    position: absolute;
+    background: #000000;
+    z-index: 10;
+  }
+
+  > button {
+    font-size: 2rem;
+    display: none;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: #ffffff;
+    border-radius: 5px;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+
+    @media screen and (max-width: 1200px) {
+      display: flex;
+    }
+  }
 
   a {
     text-decoration: none;
